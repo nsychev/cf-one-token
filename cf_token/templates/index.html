@@ -11,18 +11,17 @@
         <h1>API Access Token</h1>
         <p>
             Send the <code>{{ api_header }}</code> header with every API
-            request. Use the value below as the header value.
+            request:
         </p>
         {% if token %}
-        <p><code>{{ api_header }}: &lt;value below&gt;</code></p>
         <div class="token-row">
-            <div class="token" id="token">{{ token }}</div>
+            <div class="token" id="token">{{ api_header }}: {{ token }}</div>
             <button id="copy" type="button">Copy</button>
         </div>
         {% else %}
         <div class="error">
-            No access token found. This page must be opened through the
-            authenticating proxy.
+            No access token found. This page must be under the same Cloudflare
+	    API application.
         </div>
         {% endif %}
     </main>
